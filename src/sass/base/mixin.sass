@@ -1,3 +1,5 @@
+@import 'variables'
+
 @mixin font($font_name, $file_name, $weight, $style) 
   @font-face
     font-family: $font_name
@@ -6,4 +8,9 @@
     font-weight: #{$weight}
     font-style: #{$style}
 
-
+@mixin normal-button()
+  width: 120px
+  height: 44px
+  border: 1px solid $button-normal-color
+  border-radius: 3px
+  background: $button-normal-color
