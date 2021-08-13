@@ -9,8 +9,13 @@
     font-style: #{$style}
 
 @mixin normal-button()
+  font-family: 'ProximaNovaCond'
   width: 120px
-  height: 44px
+  height: 46px
   border: 1px solid $button-normal-color
   border-radius: 3px
   background: $button-normal-color
+  color: #fff
+  @media (min-width: 700px)
+    width: 153px
+  

@@ -22,43 +22,71 @@ body
   @include normal-button()
   &_xs,&_l
     background: #fff
-    color: #E8178A
+    color: $button-normal-color
   &_uniq
     background: #fff
-    color: #E8178A
+    color: $button-normal-color
     width: 100%
 
 .container
-  padding: 70px 16px 62px
+  padding: 70px 16px 62px 16px
+  min-width: 288px
+  max-width: 400px
+  margin: 0 auto
+  @media ( min-width: 700px) and ( max-width: 1019px )
+    padding: 39px 50px 85px 50px
+    min-width: 700px
+    max-width: 900px
+  @media (min-width: 1020px )
+    padding: 39px 50px 85px 50px
+    min-width: 930px
+    max-width: 1200px
   .title
     text-align: center
     margin-bottom: 30px
     &__content
       margin: 0
       font-family: 'ProximaNovaCond'
+      @media ( min-width: 700px) and ( max-width: 1019px )
+        font-size: 40px
+        line-height: 40px
   .rates
     display: flex
     flex-direction: column
     margin: -5px 0
+    @media ( min-width: 1020px )
     &__rate
       flex: 1 1 auto
-      margin: 5px 0
+      margin-bottom: 30px
       width: 100%
       border-radius: 8px
       border: 1px solid $main-color
       padding: 30px 21px
+      @media ( min-width: 700px) and ( max-width: 1019px )
+        padding: 40px
       &_m
         border: none
         background: linear-gradient(180deg, #E8EEFF 0%, #C2F6FF 100%)
+      &_uniq
+        @media ( min-width: 700px) and ( max-width: 1019px )
+          display: none !important
     .rate
-      display: flex
-      flex-direction: column
+      display: grid
+      grid-template-areas: "title" "features" "price"
+      @media ( min-width: 700px) and ( max-width: 1019px )
+        grid-template-columns: 2fr 1fr
+        grid-template-areas: "title ." "features price"
+        grid-row-gap: 27px
       &__title
+        grid-area: title
         display: grid
         grid-template-columns: 25% auto
         margin-bottom: 30px
         align-items: center
         justify-items: baseline
+        @media ( min-width: 700px) and ( max-width: 1019px )
+          grid-template-columns: 17% auto
+          padding-right: 10px
         &_uniq
           grid-template-columns: 1fr
           justify-items: center
@@ -74,6 +102,7 @@ body
             border-radius: 50%
             z-index: -1
       &__logo
+        font-family: 'ProximaNovaCond'
         font-weight: 700
         line-height: 26px
         font-size: 20px
@@ -107,32 +136,81 @@ body
           line-height: 26px
           font-size: 25px
       &__features
+        grid-area: features
         display: flex
         flex-direction: column
         align-items: flex-start
         flex-wrap: nowrap
-        margin-bottom: 36px
+        margin-bottom: 50px
+        @media ( min-width: 700px) and ( max-width: 1019px )
+          margin-bottom: 0px
       .features
         &__item
           margin-bottom: 8px
           font-weight: 400
           font-size: 14px
+          position: relative
+          padding-left: 1.5rem
+          line-height: 20px
+          &::before
+            content: ''
+            display: block
+            position: absolute
+            bottom: 12px
+            top: 4px
+            left: 0px
+            width: 14px
+            height: 6px
+            border-top-right-radius: 2px
+            border-bottom-right-radius: 2px
+            border-top-left-radius: 2px
+            border-right: 2px solid #2998FF
+            border-top: 2px solid #2998FF
+            transform: rotate(135deg)
       &__price
+        grid-area: price
         display: grid
         grid-template-columns: 50% 50%
         align-items: center
+        .price__content
+          padding-right: 5%
+          display: flex
+          flex-direction: column
+          align-items: center
+        @media ( min-width: 700px) and ( max-width: 1019px )
+          grid-template-columns: 1fr
+          justify-items: center
+          align-content: flex-start
+          grid-row-gap: 17px
+          .price__content
+            align-self: end
+          .button
+            align-self: start
         &_uniq
           grid-template-columns: 1fr
       .price
-        font-family: 'ProximaNovaCond', serif
         line-height: 22px
         &__total
+          font-family: 'ProximaNovaCond'
           font-weight: 700
           font-size: 24px
         &__monthly
+          font-family: 'ProximaNovaCond'
           font-weight: 400
           font-size: 14px
           color: #333333
+          @media ( min-width: 700px) and ( max-width: 1019px )
+            text-align: center
 
 
-
+// @media screen and ( min-width: 700px)
+//   .container
+//     padding: 39px 50px 85px 50px
+//     .title
+//       &__content
+//         font-size: 40px
+//         line-height: 40px
+//     .rates
+//       .rate
+//         &_uniq
+//           display: none
