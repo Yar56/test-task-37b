@@ -28,6 +28,15 @@ body
     color: $button-normal-color
     width: 100%
 
+.table
+  display: none
+  @media ( min-width: 1020px )
+    display: block
+    border: 1px solid $main-color
+    border-radius: 8px
+    border-collapse: collapse
+    .empty
+      min-width: 200px
 .container
   padding: 70px 16px 62px 16px
   min-width: 288px
@@ -55,6 +64,9 @@ body
     flex-direction: column
     margin: -5px 0
     @media ( min-width: 1020px )
+      .rates
+        &__rate_m, &__rate_l, &__rate_xs
+          display: none
     &__rate
       flex: 1 1 auto
       margin-bottom: 30px
