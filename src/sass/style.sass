@@ -53,6 +53,8 @@ body
   .title
     text-align: center
     margin-bottom: 30px
+    @media (min-width: 1020px )
+      margin-bottom: 50px
     &__content
       margin: 0
       font-family: 'ProximaNovaCond'
@@ -234,6 +236,21 @@ body
         td
           &:nth-child(n+2)
             border-bottom: none
+          &:nth-child(3)
+            position: relative
+            border-bottom: 1px solid #F9FBFF
+            &::before
+              content: ''
+              position: absolute
+              width: 224px
+              height: 17px
+              background: #F9FBFF
+              background: linear-gradient(180deg, rgba(194,245,255,1) 90%, rgba(232,238,255,1) 100%)
+              bottom: -17px
+              left: 0
+              right: 0
+              border-bottom-right-radius: 8px
+              border-bottom-left-radius: 8px
     tr>td
       &:last-child
         border-right: none
@@ -257,6 +274,22 @@ body
           line-height: 22px
           margin-bottom: 6px
     tr
+      &:first-child
+        td:nth-child(3)
+          position: relative
+          border-top: none
+          &::before
+            content: ''
+            position: absolute
+            top: -17px
+            left: 0
+            right: 0
+            width: 224px
+            height: 17px
+            border-top-right-radius: 8px
+            border-top-left-radius: 8px
+            background: #F9FBFF
+            background: linear-gradient(180deg, rgba(194,245,255,1) 90%, rgba(232,238,255,1) 100%)
       &:nth-child(2)
         td
           width: 224px
