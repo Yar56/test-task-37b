@@ -137,12 +137,14 @@ function clean(params) {
 
 const build = gulp.series(clean, gulp.parallel(html, css, fonts)); // images, fontsSyle
 const watch = gulp.parallel(build, watchFiles, browserSyncFunc);
+const onlyBuild = gulp.series(clean, build)
 
 // exports.fontsStyle = fontsStyle;
 exports.fonts = fonts;
 // exports.images = images;
 exports.css = css;
 exports.html = html;
+exports.onlyBuild = build;
 exports.build = build;
 exports.watch = watch;
 exports.default = watch;
