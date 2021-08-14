@@ -23,20 +23,20 @@ body
   &_xs,&_l
     background: #fff
     color: $button-normal-color
+    &:hover, &:active
+      background: $button-normal-color
+      color: #fff
   &_uniq
     background: #fff
     color: $button-normal-color
     width: 100%
+    &:hover, &:active
+      background: $button-normal-color
+      color: #fff
+    @media (min-width: 1020px )
+      width: 207px
 
-.table
-  display: none
-  @media ( min-width: 1020px )
-    display: block
-    border: 1px solid $main-color
-    border-radius: 8px
-    border-collapse: collapse
-    .empty
-      min-width: 200px
+
 .container
   padding: 70px 16px 62px 16px
   min-width: 288px
@@ -45,7 +45,7 @@ body
   @media ( min-width: 700px) and ( max-width: 1019px )
     padding: 39px 50px 85px 50px
     min-width: 700px
-    max-width: 900px
+    max-width: 930px
   @media (min-width: 1020px )
     padding: 39px 50px 85px 50px
     min-width: 930px
@@ -82,6 +82,14 @@ body
       &_uniq
         @media ( min-width: 700px) and ( max-width: 1019px )
           display: none !important
+        @media (min-width: 1020px)
+          width: 930px
+          margin: 0 auto
+          padding: 50px 36px 57px 50px
+        @media ( min-width: 1020px)
+          grid-template-columns: 2fr 1fr
+          grid-template-areas: "title ." "features price" !important
+          grid-column-gap: 180px
     .rate
       display: grid
       grid-template-areas: "title" "features" "price"
@@ -113,6 +121,10 @@ body
             background: $main-color
             border-radius: 50%
             z-index: -1
+          @media ( min-width: 1020px)
+            justify-items: flex-start
+            &::before
+              content: none
       &__logo
         font-family: 'ProximaNovaCond'
         font-weight: 700
@@ -147,6 +159,8 @@ body
           font-weight: 700
           line-height: 26px
           font-size: 25px
+          @media ( min-width: 1020px)
+            font-size: 22px
       &__features
         grid-area: features
         display: flex
@@ -156,6 +170,9 @@ body
         margin-bottom: 50px
         @media ( min-width: 700px) and ( max-width: 1019px )
           margin-bottom: 0px
+        @media ( min-width: 1020px)
+          font-size: 14px
+          margin: 0
       .features
         &__item
           margin-bottom: 8px
@@ -165,20 +182,7 @@ body
           padding-left: 1.5rem
           line-height: 20px
           &::before
-            content: ''
-            display: block
-            position: absolute
-            bottom: 12px
-            top: 4px
-            left: 0px
-            width: 14px
-            height: 6px
-            border-top-right-radius: 2px
-            border-bottom-right-radius: 2px
-            border-top-left-radius: 2px
-            border-right: 2px solid #2998FF
-            border-top: 2px solid #2998FF
-            transform: rotate(135deg)
+            @include check
       &__price
         grid-area: price
         display: grid
@@ -200,6 +204,8 @@ body
             align-self: start
         &_uniq
           grid-template-columns: 1fr
+          @media ( min-width: 1020px)
+            margin-top: -30%
       .price
         line-height: 22px
         &__total
@@ -214,15 +220,86 @@ body
           @media ( min-width: 700px) and ( max-width: 1019px )
             text-align: center
 
-
-// @media screen and ( min-width: 700px)
-//   .container
-//     padding: 39px 50px 85px 50px
-//     .title
-//       &__content
-//         font-size: 40px
-//         line-height: 40px
-//     .rates
-//       .rate
-//         &_uniq
-//           display: none
+.table
+  display: none
+  @media ( min-width: 1020px )
+    display: block
+    border: 1px solid $main-color
+    border-radius: 8px
+    border-collapse: collapse
+    margin: 0 auto
+    margin-bottom: 50px
+    tr
+      &:last-child
+        td
+          &:nth-child(n+2)
+            border-bottom: none
+    tr>td
+      &:last-child
+        border-right: none
+    tr
+      td
+        border-left: none
+        border-top: none
+    tr:last-child
+      height: 188px
+      .price
+        &__content
+        &__total
+          font-family: 'ProximaNovaCond'
+          font-size: 24px
+          line-height: 22px
+          margin-bottom: 5px
+          &_xs
+            margin-bottom: 30px
+        &__monthly
+          font-size: 14px
+          line-height: 22px
+          margin-bottom: 6px
+    tr
+      &:nth-child(2)
+        td
+          width: 224px
+          padding: 15px 60px
+          font-size: 14px
+    tr > td
+      &:nth-child(1)
+        text-align: left
+        padding: 16px 37px 14px 22px
+        font-size: 14px
+        line-height: 20px
+      &:nth-child(3)
+        background: #F9FBFF
+        background: linear-gradient(180deg, rgba(194,245,255,1) 90%, rgba(232,238,255,1) 100%)
+    .check
+      position: relative
+      &::before
+        @include check
+    .cancel
+      position: relative
+      &::before
+        @include cancel(45deg)
+      &::after
+        @include cancel(-45deg)
+    .rate
+      &__title
+        grid-template-columns: 100% !important
+        grid-template-rows: 1fr 1fr
+        margin: 12px 10px 39px 10px !important
+        justify-items: center !important
+      &__logo
+        font-size: 22px !important
+        &::before
+          background: none !important
+      &__descr
+        text-align: center
+        font-size: 14px !important
+    td
+      min-width: 200px
+      max-width: 230px
+      text-align: center
+    tr
+      height: 70px
+    .empty
+      min-width: 200px
+      border-bottom: 1px solid white
