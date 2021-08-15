@@ -156,7 +156,7 @@ body
         &_l
           padding-left: 21px
           @media ( min-width: 1020px)
-            margin-top: 17px
+            // margin-top: 17px
           &::before
             background: $main-color
       &__descr
@@ -248,8 +248,7 @@ body
               position: absolute
               width: 224px
               height: 17px
-              background: #F9FBFF
-              background: linear-gradient(180deg, rgba(194,245,255,1) 90%, rgba(232,238,255,1) 100%)
+              background: #ECF2FF
               bottom: -17px
               left: 0
               right: 0
@@ -266,6 +265,7 @@ body
       height: 188px
       .price
         &__total
+          font-weight: 700
           font-family: 'ProximaNovaCond'
           font-size: 24px
           line-height: 22px
@@ -273,6 +273,8 @@ body
           &_xs
             margin-bottom: 30px
         &__monthly
+          font-weight: 400
+          font-family: 'ProximaNovaCond'
           font-size: 14px
           line-height: 22px
           margin-bottom: 6px
@@ -291,8 +293,7 @@ body
             height: 17px
             border-top-right-radius: 8px
             border-top-left-radius: 8px
-            background: #F9FBFF
-            background: linear-gradient(180deg, rgba(194,245,255,1) 90%, rgba(232,238,255,1) 100%)
+            background: #ECF2FF
       &:nth-child(2)
         td
           width: 224px
@@ -305,8 +306,7 @@ body
         font-size: 14px
         line-height: 20px
       &:nth-child(3)
-        background: #F9FBFF
-        background: linear-gradient(180deg, rgba(194,245,255,1) 90%, rgba(232,238,255,1) 100%)
+        background: #ECF2FF        
     .check
       position: relative
       @include check
@@ -320,7 +320,7 @@ body
       &__title
         grid-template-columns: 100% !important
         grid-template-rows: 1fr 1fr
-        margin: 12px 10px 39px 10px !important
+        margin: 24px 10px 19px 10px !important
         justify-items: center !important
       &__logo
         font-size: 22px !important
@@ -328,7 +328,7 @@ body
           background: none !important
       &__descr
         text-align: center
-        font-size: 14px !important
+        font-size: 13px !important
     td
       min-width: 200px
       max-width: 230px
