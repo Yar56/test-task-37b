@@ -131,10 +131,13 @@ body
         font-family: 'ProximaNovaCond'
         font-weight: 700
         line-height: 26px
-        font-size: 20px
-        padding-left: 10px
+        font-size: 30px
+        padding-left: 16px
         position: relative
         z-index: 1
+        top: -10px
+        @media ( min-width: 700px) and ( max-width: 1019px )
+          align-self: end
         &::before
           content: ''
           width: 46px
@@ -143,15 +146,15 @@ body
           background: #fff
           border-radius: 50%
           top: -10px
-          left: -5px
+          left: 4px
           z-index: -1
         &_xs
+          padding-left: 12px
           &::before
-            left: -1px
             background: $main-color
         &_l
+          padding-left: 21px
           &::before
-            left: -6px
             background: $main-color
       &__descr
         font-weight: bold
@@ -181,10 +184,9 @@ body
           font-weight: 400
           font-size: 14px
           position: relative
-          padding-left: 1.5rem
+          padding-left: 2rem
           line-height: 20px
-          &::before
-            @include check
+          @include check()
       &__price
         grid-area: price
         display: grid
@@ -305,8 +307,7 @@ body
         background: linear-gradient(180deg, rgba(194,245,255,1) 90%, rgba(232,238,255,1) 100%)
     .check
       position: relative
-      &::before
-        @include check
+      @include check
     .cancel
       position: relative
       &::before

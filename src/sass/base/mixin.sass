@@ -22,26 +22,35 @@
   @media (min-width: 700px)
     width: 153px
   
-@mixin check
-  content: ''
-  display: block
-  position: absolute
-  bottom: 12px
-  top: 4px
-  left: 0px
-  width: 14px
-  height: 6px
-  border-top-right-radius: 2px
-  border-bottom-right-radius: 2px
-  border-top-left-radius: 2px
-  border-right: 2px solid #2998FF
-  border-top: 2px solid #2998FF
-  transform: rotate(135deg)
-  @media  ( min-width: 1020px )
-    width: 22px
-    height: 10px
-    top: 50%
-    left: 50%
+@mixin check()
+  &::before, &::after
+    content: ''
+    position: absolute
+    margin-right: 10px
+    border-radius: 4px
+    height: 4px
+    @media ( min-width: 1020px )
+      display: block
+      top: 50%
+      left: 50%
+  &::after
+    left: 8px
+    width: 7px
+    background: #2998FF
+    transform: rotate(229deg)
+    top: 10px
+    @media ( min-width: 1020px )
+      width: 10px
+      top: 57%
+      left: 49%
+  &::before
+    left: 10px
+    width: 15px
+    background: #2998FF
+    transform: rotate(310deg)
+    top: 6px
+    @media ( min-width: 1020px )
+      width: 25px
 
 @mixin cancel($state)
   content: ''
