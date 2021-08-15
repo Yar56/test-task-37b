@@ -58,9 +58,10 @@ body
     &__content
       margin: 0
       font-family: 'ProximaNovaCond'
-      @media ( min-width: 700px) and ( max-width: 1019px )
-        font-size: 40px
-        line-height: 40px
+      font-size: 40px
+      line-height: 40px
+      font-weight: 800
+
   .rates
     display: flex
     flex-direction: column
@@ -154,6 +155,8 @@ body
             background: $main-color
         &_l
           padding-left: 21px
+          @media ( min-width: 1020px)
+            margin-top: 17px
           &::before
             background: $main-color
       &__descr
@@ -196,7 +199,6 @@ body
           padding-right: 5%
           display: flex
           flex-direction: column
-          align-items: center
         @media ( min-width: 700px) and ( max-width: 1019px )
           grid-template-columns: 1fr
           justify-items: center
